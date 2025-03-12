@@ -104,7 +104,7 @@ function App() {
                       </button> 
                       <div className='w-full flex justify-center'>
                         <button className='w-1/2 mt-3 bg-blue-600 text-white px-4 py-3 rounded-lg cursor-pointer' onClick={reset}>RESET</button>
-                        <button className='w-1/2 ml-2 mt-3 bg-blue-600 text-white px-4 py-3 rounded-lg cursor-pointer' onClick={resetCurrency}>DEFAULT CURRENCY</button>
+                        <button className='w-1/2 ml-2 mt-3 bg-blue-600 text-white px-4 py-3 rounded-lg cursor-pointer' onClick={resetCurrency}>DEFAULT CURRENCY </button>
                       </div>
                 </form>
             </div>
