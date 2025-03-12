@@ -19,6 +19,7 @@ function App() {
   return (
     <>
     <h1>react ig</h1>
+    <h1>for changes of commits</h1>
     <h2>counter value: {counter}</h2>
     <button onClick={addValue}>Add value</button>
     <br/>
