@@ -17,6 +17,7 @@ function App() {
     <h1 className='bg-green-400 text-black p-4 rounded-xl'>Tailwind test</h1> 
     < Card name="troyy" btnText="click me"/>
     < Card name="neeraj" btnText="visit me"/>
+    < h3 >This is again for commits last message</h3>
     </>
   )
 }
