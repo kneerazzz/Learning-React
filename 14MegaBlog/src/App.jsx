@@ -1,17 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState , useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import './App.css'
+import authService from './appwrite/auth'
+import { login, logout } from './store/authSlice'
+import { Footer, Header } from './components/index.js'
+
 
 function App() {
+  const [loading , setLoading] = useState(true)
+  const dispatch = useDispatch()
 
-  console.log(import.meta.env.VITE_APPWRITE_URL);
+  useEffect(() => {
+    authService.getCurrentUser()
+    .then((userData) => {
+      if(userData) {
+        dispatch(login({userData}))
+      }
+      else {
+        dispatch(logout())
+      }
+    })
+    .catch((error) => {
+      console.log('error getting currentUserData' , error)
+    })
+    .finally(() => setLoading(false))
+  }, [])
 
-  return (
-    <>
-      <h1>A blog app with appwrite</h1>
-    </>
+
+  return !loading ? (
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+      <div className='w-full block'>
+        <Header />
+        <main>
+        </main>
+        <Footer />
+      </div>
+    </div>
+  ) : (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="w-12 h-12 border-4 border-dashed rounded-full animate-spin border-blue-500"></div>
+      </div>
   )
+
 }
 
 export default App
