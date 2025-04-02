@@ -23,7 +23,7 @@ export default function Footer() {
                             <h3 className="tracking-px mb-9 text-xs font-semibold uppercase text-gray-500">
                                 Company
                             </h3>
-                            <u1>
+                            <ul>
                                 <li className="mb-4">
                                     <Link className="text-base font-medium text-gray-900 hover:text-gray-700"
                                             to="/"
@@ -53,7 +53,7 @@ export default function Footer() {
                                         Press Kit
                                     </Link>
                                 </li>
-                            </u1>
+                            </ul>
                         </div>
                     </div>
                     <div className="w-full p-6 md:w-1/2 lg:w-2/12">
@@ -61,7 +61,7 @@ export default function Footer() {
                             <h3 className="tracking-px mb-9 text-xs font-semibold uppercase text-gray-500">
                                 Support
                             </h3>
-                            <u1>
+                            <ul>
                                 <li className="mb-4">
                                     <Link className="text-base font-medium text-gray-900 hover:text-gray-700"
                                         to="/"
@@ -93,7 +93,7 @@ export default function Footer() {
                                         Customer Support
                                     </Link>
                                 </li>
-                            </u1>
+                            </ul>
                         </div>
                     </div>
                     <div className="w-full p-6 md:w-1/2 lg:w-3/12">
@@ -101,7 +101,7 @@ export default function Footer() {
                             <h3 className="tracking-px mb-9 text-xs font-semibold uppercase text-gray-500">
                                 Legals
                             </h3>
-                            <u1>
+                            <ul>
                                 <li className="mb-4">
                                     <Link
                                         className="text-base font-medium text-gray-900 hover:text-gray-700"
@@ -126,7 +126,7 @@ export default function Footer() {
                                         Licensing
                                     </Link>
                                 </li>
-                            </u1>
+                            </ul>
                         </div>
                     </div>
                 </div>
