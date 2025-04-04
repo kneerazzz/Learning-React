@@ -5,14 +5,13 @@ import App from './App.jsx'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Protected from './components/AuthLayout.jsx'
-import Login from './pages/Login'
 import Signup from './pages/Signup'
 import AllPosts from './pages/AllPosts'
 import AddPost from './pages/AddPost'
 import EditPost from './pages/EditPost'
 import Post from './pages/Post'
 import Home from './pages/Home'
+import {Protected , Login} from './components/index.js'
 
 
 
@@ -62,7 +61,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "edit-post:slug",
+        path: "edit-post/:slug",
         element: (
           <Protected authentication>
             {" "}

@@ -1,5 +1,5 @@
 import conf from "../conf/conf.js";
-import { Client , ID, Account, Databases , Storage ,Query } from "appwrite";
+import { Client , ID, Databases , Storage ,Query } from "appwrite";
 
 
 export class Service {
@@ -14,7 +14,7 @@ export class Service {
         this.bucket = new Storage(this.client);
 
     }
-    async createPost(title , slug, content , featuredImage ,status , userId){
+    async createPost({title , slug, content , featuredImage ,status , userId}){
         try{
             return await this.databases.createDocument(
                 conf.appwriteDatabaseID,
@@ -79,8 +79,7 @@ export class Service {
                 slug
             )
         }catch(error){
-            console.log('error getting post : ', error);
-            throw error;
+            console.log('error getting post : ');
         }
     }
     async getPosts(queries = [Query.equal("status" , "active")]){

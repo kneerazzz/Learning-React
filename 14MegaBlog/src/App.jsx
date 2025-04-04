@@ -4,6 +4,7 @@ import './App.css'
 import authService from './appwrite/auth'
 import { login, logout } from './store/authSlice'
 import { Footer, Header } from './components/index.js'
+import { Outlet } from 'react-router-dom'
 
 
 function App() {
@@ -20,9 +21,6 @@ function App() {
         dispatch(logout())
       }
     })
-    .catch((error) => {
-      console.log('error getting currentUserData' , error)
-    })
     .finally(() => setLoading(false))
   }, [])
 
@@ -32,6 +30,7 @@ function App() {
       <div className='w-full block'>
         <Header />
         <main>
+          <Outlet />
         </main>
         <Footer />
       </div>

@@ -12,18 +12,14 @@ export class AuthService {
         this.account = new Account(this.client);
 
     }
-    async createAccount({email , password,name}) {
+    async createAccount({email , password, name}) {
         try{
             const userAccount = await this.account.create(ID.unique() , email , password , name);
             if(userAccount){
                 // call another method
-                return this.login(email, password);
+                return userAccount;
                 
             }
-            else {
-                return userAccount
-            }
-
 
         }catch(error){
             throw error;
@@ -62,4 +58,4 @@ export class AuthService {
 const authService = new AuthService();
 
 
-export default authService;
+export default authService

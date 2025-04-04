@@ -20,6 +20,7 @@ function Login() {
 
             if(session){
                 const userData = await authService.getCurrentUser()
+
                 if(userData){
                     dispatch(authLogin(userData))
                 }
@@ -28,6 +29,7 @@ function Login() {
             }
 
         }catch(error){
+            console.log("is this the problem")
             setError(error.message)
         }
     }
@@ -46,7 +48,7 @@ function Login() {
                     Don&apos;t have any account?&nbsp;
                     <Link
                         to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
+                        className="font-medium text-primary transition-all duration-200 hover:underline ml-1 text-blue-700 hover:text-gray-500"
                     >
                         Sign Up
                     </Link>

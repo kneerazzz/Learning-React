@@ -15,7 +15,7 @@ export default function PostForm({post}){
         },
     })
     const navigate = useNavigate()
-    const userData = useSelector((state) => state.user.userData)
+    const userData = useSelector((state) => state.auth.userData)
 
     const submit = async (data) => {
         if(post){
@@ -40,6 +40,7 @@ export default function PostForm({post}){
                 data.featuredImage = fileId
                 const dbPost = await appwriteService.createPost({
                     ...data,
+                    slug: slugTransform(data.title),
                     userId: userData.$id
                 })
                 if(dbPost){

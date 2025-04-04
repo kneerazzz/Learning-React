@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import authService from "../appwrite/auth";
 import { Link , useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
-import {Button , Input , Logo} from './index'
+import {Button , Input , Logo} from './index.js'
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
@@ -40,18 +40,8 @@ function Signup() {
                 <h2
                     className="text-center text-2xl font-bold leading-tight"
                 >Sign up to create acoount</h2>
-                <p>
-                    Already have an account?&nbsp;
-                    <Link 
-                        to="/login"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
-                        Sign In
-                    </Link>
-                </p>
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-                <form onClick={handleSubmit(create)}>
+                <form onSubmit={handleSubmit(create)} className="mt-4">
                     <div className="space-y-5">
                         <Input
                             label="Full Name: "
@@ -78,6 +68,16 @@ function Signup() {
                                 required: true,
                             })}
                         />
+                        <p>
+                            Already have an account?&nbsp;  
+                        <Link 
+                            to="/login"
+                            className="font-medium text-primary transition-all duration-200 hover:underline ml-1 text-blue-600 "
+                            >
+                                Sign In
+                        </Link>
+                        </p>
+                        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
                         <Button
                         type="submit"
                         className="w-full"
