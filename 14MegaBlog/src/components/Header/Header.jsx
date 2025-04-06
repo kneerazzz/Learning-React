@@ -2,7 +2,6 @@ import React from "react";
 import {Container , Logo ,LogoutBtn} from '../index'
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux";
-
 import { useNavigate } from "react-router-dom";
 
 
@@ -18,12 +17,12 @@ export default function Header() {
         {
             name: "Login",
             slug: "/Login",
-            active: !authStatus
+            active: !authStatus,
         },
         {
             name: "Signup",
             slug: '/signup',
-            active: !authStatus
+            active: !authStatus,
         },
         {
             name: "All Posts",
@@ -33,9 +32,10 @@ export default function Header() {
         {
             name: "Add Post",
             slug: "/add-post",
-            active: authStatus
+            active: authStatus,
         }
     ]
+    console.log("auth status in Header; ",authStatus)
     return (
         <header className="py-3 shadow bg-gray-500">
             <Container>

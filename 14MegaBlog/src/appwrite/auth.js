@@ -17,8 +17,10 @@ export class AuthService {
             const userAccount = await this.account.create(ID.unique() , email , password , name);
             if(userAccount){
                 // call another method
+                return this.login({email, password})
+            }
+            else {
                 return userAccount;
-                
             }
 
         }catch(error){
@@ -35,13 +37,14 @@ export class AuthService {
     }
     async getCurrentUser(){
         try{
-            await this.account.get();
+            const user = await this.account.get();
+            console.log("user found: " , user)
+            return user;
             
         } catch(error){
             console.log("appwrite error");
             throw error;
         }
-        return null;
     }
     async logout() {
         try{
