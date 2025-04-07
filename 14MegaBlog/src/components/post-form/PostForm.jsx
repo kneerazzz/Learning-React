@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React, {useCallback, useEffect} from "react";
 import { useForm } from "react-hook-form";
 import appwriteService from "../../appwrite/config";
 import {Button , Input , Select , RTE} from '../index'
@@ -112,7 +112,7 @@ export default function PostForm({post}){
                         label="Featured Image :"
                         type="file"
                         className="mb-4"
-                        accept="image/png, image/jpg, image/jpeg, image/gif"
+                        accept="image/png, image/jpg, image/jpeg, image/gif, image/svg"
                         {...register ("image" , {required: !post})}
                     />
                     {post && (

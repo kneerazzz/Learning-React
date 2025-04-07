@@ -91,7 +91,7 @@ export class Service {
             )
 
         } catch(error){
-            console.log('error getting posts : ' , error);
+            console.log('error getting posts : ' , error.message);
         }
 
     }
@@ -123,7 +123,7 @@ export class Service {
 
     }
     getFilePreview(fileId){
-        return this.bucket.getFilePreview(
+        return this.bucket.getFileView(
             conf.appwriteBucketID,
             fileId
         )

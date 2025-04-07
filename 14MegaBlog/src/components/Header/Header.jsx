@@ -26,7 +26,7 @@ export default function Header() {
         },
         {
             name: "All Posts",
-            slug: "/all-post",
+            slug: "/all-posts",
             active: authStatus,
         },
         {
@@ -35,7 +35,6 @@ export default function Header() {
             active: authStatus,
         }
     ]
-    console.log("auth status in Header; ",authStatus)
     return (
         <header className="py-3 shadow bg-gray-500">
             <Container>
